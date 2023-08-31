@@ -1,1 +1,2 @@
-# js_lectures_section_two
+# JavaScript lecture section two
+
