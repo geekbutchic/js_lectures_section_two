@@ -1,4 +1,4 @@
-//Functions
+//Functions -> examples are Function Declarations
 
 function logger() {
   console.log(`My name is Sonny!`);
