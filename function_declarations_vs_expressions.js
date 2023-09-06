@@ -67,21 +67,27 @@ const worldPopulation = 7900000000;
 const usaPercentage = percentageOfWorld(usaPopulation, worldPopulation);
 
 console.log(
-  `USA has ${usaPopulation.toLocaleString("en-US")} million people, so it's about ${usaPercentage}% of the worlds population.`
+  `USA has ${usaPopulation.toLocaleString(
+    "en-US"
+  )} million people, so it's about ${usaPercentage}% of the worlds population.`
 );
 
 const chinaPopulation = 1444216107;
 const chinaPercentage = percentageOfWorld(chinaPopulation, worldPopulation);
 
 console.log(
-  `China has ${chinaPopulation.toLocaleString("en-US")} billion people, so it's about ${chinaPercentage}% of the worlds population.`
+  `China has ${chinaPopulation.toLocaleString(
+    "en-US"
+  )} billion people, so it's about ${chinaPercentage}% of the worlds population.`
 );
 
 const spainPopulation = 47420000;
 const spainPercentage = percentageOfWorld(spainPopulation, worldPopulation);
 
 console.log(
-  `Spain has ${spainPopulation.toLocaleString("en-US")} million people, so it's about ${spainPercentage}% of the worlds population.`
+  `Spain has ${spainPopulation.toLocaleString(
+    "en-US"
+  )} million people, so it's about ${spainPercentage}% of the worlds population.`
 );
 
 /* 
@@ -91,3 +97,42 @@ China has 1,444,216,107 billion people, so it's about 18.28% of the worlds popul
 
 Spain has 47,420,000 million people, so it's about 0.60% of the worlds population.
 */
+console.log(`=====================================`);
+// Function Expression Solution : Inverted Solution to show difference.
+const usaPopulation2 = 331900000;
+const chinaPopulation2 = 1444216107;
+const spainPopulation2 = 47420000;
+const worldPopulation2 = 7900000000;
+
+const usaPercentage2 = percentageOfWorld(usaPopulation, worldPopulation);
+
+console.log(`Function Expression Version: `,
+  `USA has ${usaPopulation2.toLocaleString(
+    "en-US"
+  )} million people, so it's about ${usaPercentage2}% of the worlds population.`
+);
+
+const chinaPercentage2 = percentageOfWorld(chinaPopulation, worldPopulation);
+
+console.log(`Function Expression Version: `,
+  `China has ${chinaPopulation2.toLocaleString(
+    "en-US"
+  )} billion people, so it's about ${chinaPercentage2}% of the worlds population.`
+);
+
+const spainPercentage2 = percentageOfWorld(spainPopulation, worldPopulation);
+
+console.log(`Function Expression Version: `,
+  `Spain has ${spainPopulation2.toLocaleString(
+    "en-US"
+  )} million people, so it's about ${spainPercentage2}% of the worlds population.`
+);
+
+const percentageOfWorld2 = function(countryPopulation, worldPopulation) {
+  const percentage = countryPopulation / worldPopulation * 100;
+  return percentage.toFixed(2);
+};
+
+
+
+
