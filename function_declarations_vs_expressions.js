@@ -106,7 +106,7 @@ const worldPopulation2 = 7900000000;
 
 const usaPercentage2 = percentageOfWorld(usaPopulation, worldPopulation);
 
-console.log(`Function Expression Version: `,
+console.log(`Function Declarations Version: `,
   `USA has ${usaPopulation2.toLocaleString(
     "en-US"
   )} million people, so it's about ${usaPercentage2}% of the worlds population.`
@@ -114,7 +114,7 @@ console.log(`Function Expression Version: `,
 
 const chinaPercentage2 = percentageOfWorld(chinaPopulation, worldPopulation);
 
-console.log(`Function Expression Version: `,
+console.log(`Function Declarations Version: `,
   `China has ${chinaPopulation2.toLocaleString(
     "en-US"
   )} billion people, so it's about ${chinaPercentage2}% of the worlds population.`
@@ -122,7 +122,7 @@ console.log(`Function Expression Version: `,
 
 const spainPercentage2 = percentageOfWorld(spainPopulation, worldPopulation);
 
-console.log(`Function Expression Version: `,
+console.log(`Function Declarations Version: `,
   `Spain has ${spainPopulation2.toLocaleString(
     "en-US"
   )} million people, so it's about ${spainPercentage2}% of the worlds population.`
