@@ -59,3 +59,46 @@ const yearsUntilRetirement = (birthYear, firstName) => {
 };
 
 console.log(yearsUntilRetirement(1984, "Sonny"));
+
+/*
+Lecture : Arrow Functions
+1. Recreate the last assignment, but this time create an arrow function called 'percentageOfWorld3'.
+*/
+
+const worldPopulation = 7900000000;
+const usaPopulation = 331900000;
+const chinaPopulation = 1444216107;
+const spainPopulation = 47420000;
+
+const percentageOfWorld = (countryPopulation, worldPopulation) =>
+  (countryPopulation / worldPopulation * 100).toFixed(2);
+
+const usaPercentage = percentageOfWorld(usaPopulation, worldPopulation);
+
+console.log(
+  `USA has ${usaPopulation.toLocaleString(
+    "en-US"
+  )} million people, so it's about ${usaPercentage}% of the worlds population.`
+);
+
+const chinaPercentage = percentageOfWorld(chinaPopulation, worldPopulation);
+
+console.log(
+  `China has ${chinaPopulation.toLocaleString(
+    "en-US"
+  )} billion people, so it's about ${chinaPercentage}% of the worlds population.`
+);
+
+const spainPercentage = percentageOfWorld(spainPopulation, worldPopulation);
+
+console.log(
+  `Spain has ${spainPopulation.toLocaleString(
+    "en-US"
+  )} million people, so it's about ${spainPercentage}% of the worlds population.`
+);
+
+/*
+  No, arrow functions cannot be hoisted like function declarations. Function declarations are hoisted, meaning they are moved to the top of their containing scope during the compilation phase of code execution, and you can call them before their actual declaration in the code.
+
+  Arrow functions, on the other hand, are not hoisted. You cannot call an arrow function before its declaration in the code because they are lexically scoped. Arrow functions are typically treated like variables or constants, and they must be defined before they are used.
+*/
