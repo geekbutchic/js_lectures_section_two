@@ -10,7 +10,7 @@ const sonnyArray = [
   ["Tom", "Victoria", "Frances"]
 ];
 
-//Bracket notation position 
+//Bracket notation position
 console.log(sonnyArray[1]);
 
 // Data Structure - Key : Value Pairs
@@ -27,16 +27,16 @@ const sonny = {
 
 //.dot vs bracket notation
 
-console.log(`Dot Notation: `,sonny.lastName);
-console.log(`Bracket Notation: `,sonny["lastName"]);
+console.log(`Dot Notation: `, sonny.lastName);
+console.log(`Bracket Notation: `, sonny["lastName"]);
 
 // [We can insert any expression here...]
 const nameKey = "Name";
 console.log(sonny["first" + nameKey]);
 console.log(sonny["last" + nameKey]);
 
-sonny.location = 'United States of America';
-sonny['email'] = 'sonnyleevalenz.com';
+sonny.location = "United States of America";
+sonny["email"] = "sonnyleevalenz.com";
 console.log(sonny);
 
 /* 
@@ -50,23 +50,23 @@ The key point of interest is how you're using bracket notation to access propert
 
 */
 
-// Uncomment to show prompt 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+// Uncomment to show prompt
+// const rl = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout
+// });
 
-rl.question(
-  "What do you want to know about Sonny? Choose between firstName, lastName, age, job, and friends? ",
-  key => {
-    if (sonny.hasOwnProperty(key)) {
-      console.log(`Sonny's ${key} is: ${sonny[key]}`);
-    } else {
-      console.log(`Sorry, ${key} is not a valid property.`);
-    }
-    rl.close();
-  }
-);
+// rl.question(
+//   "What do you want to know about Sonny? Choose between firstName, lastName, age, job, and friends? ",
+//   key => {
+//     if (sonny.hasOwnProperty(key)) {
+//       console.log(`Sonny's ${key} is: ${sonny[key]}`);
+//     } else {
+//       console.log(`Sorry, ${key} is not a valid property.`);
+//     }
+//     rl.close();
+//   }
+// );
 
 /* 
 * We use the rl.question() method to prompt the user to choose a key ("firstName", "lastName", "age", "job", or "friends").
@@ -80,7 +80,10 @@ rl.question(
 */
 
 // Challenge grab object values without hard coding...
-console.log(`${sonny.firstName} has ${sonny.friends.length} and his best friend is called ${sonny.friends[0]}`);
+console.log(
+  `${sonny.firstName} has ${sonny.friends
+    .length} and his best friend is called ${sonny.friends[0]}`
+);
 
 /*
 Precedence
@@ -88,3 +91,44 @@ Precedence
 * JavaScript, the dot notation (.) has a higher precedence than the square bracket notation ([]) when accessing object properties.
 * 
 */
+
+/* 
+Lecture : Introduction to Objects
+1. Create an object called 'myCountry' for a country of your choice, containing properties 'country', 'capital', 'language', 'population' and 'neighbors' (an array like we used in previous assignments.) ✅
+*/
+
+const numberInMillion = 59.11 * 1000000;
+console.log(numberInMillion);
+
+const myCountry = {
+  country: "Italia",
+  capital: "Roma",
+  language: "Italian",
+  population: 59.11,
+  neighbors: [
+    "Austria",
+    "France",
+    "Holy See",
+    "San Marino",
+    "Slovenia",
+    "Switzerland"
+  ]
+};
+
+/*
+Lecture : Dot vs Bracket Notation
+* Using the object from the previous assignment, log a string like this to the console: 'Finland has 6 million finnish-speaking people, 3 neighboring countries and a capital called Helsinki'. ✅
+* Increase the country's population by two million using dot notation, and then decrease it by two million using bracket notation.
+*/
+
+console.log(
+  `${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry
+    .neighbors
+    .length} neighboring countries and a capital called ${myCountry.capital}`
+);
+
+myCountry.population += 2;
+console.log(myCountry);
+myCountry.population -= 2;
+console.log(myCountry);
+
