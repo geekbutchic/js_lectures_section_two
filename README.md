@@ -1,2 +1,2 @@
-# JavaScript lecture section two
+# JavaScript Lecture Notes Part Two
 
