@@ -24,6 +24,8 @@ console.log(friends); // [ 'John', 'Michael', 'Steven', 'Peter' ]
 console.log(friends.includes("Steven")); // true
 
 //Useful applications to write conditionals .includes()
-if (friends.includes("Peter")) { // Returns a boolean
-    console.log(`You have a friend called Peter...`);
+if (friends.includes("Peter")) {
+  // Returns a boolean
+  console.log(`You have a friend called Peter...`);
 }
+

@@ -17,3 +17,13 @@ for (let i = sonny.length - 1; i >= 0; i--) {
 
 // x = x - 1 equivalent to (x--)
 // x = x + 1 equivalent to (x++)
+
+// Loop within a loop
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`Starting exercise ${exercise}`);
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(
+      `Exercise ${exercise} Lifting Weights repetition ${rep} 🏋🏻‍♀️`
+    );
+  }
+}
