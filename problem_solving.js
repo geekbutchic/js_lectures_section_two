@@ -14,14 +14,16 @@ let highestTemperature = Number.NEGATIVE_INFINITY; // Start with a very low valu
 
 // Iterate through the array
 for (let i = 0; i < temperatures.length; i++) {
-    const currentTemperature = temperatures[i];
-    
-    // Check if the current value is a number and higher than the current highest temperature
-    if (typeof currentTemperature === 'number' && currentTemperature > highestTemperature) {
-        highestTemperature = currentTemperature;
-    }
+  const currentTemperature = temperatures[i];
+
+  // Check if the current value is a number and higher than the current highest temperature
+  if (
+    typeof currentTemperature === "number" &&
+    currentTemperature > highestTemperature
+  ) {
+    highestTemperature = currentTemperature;
+  }
 }
 
 console.log("The highest temperature is:", highestTemperature);
-
 
