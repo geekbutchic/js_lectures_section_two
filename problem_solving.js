@@ -21,23 +21,50 @@ We work for a company building a smart home thermometer.  Our most recent task i
 
 // ** When the loop encounters a non-numeric value (e.g., the string "err" in the example), the comparisons within the loop (currentNumber < min and currentNumber > max) will not evaluate to true. In JavaScript, comparisons between a number and a non-numeric value will return false **.
 
+// const temperatures = [3, -2, -6, -1, "err", 9, 13, 17, 15, 14, 9, 5];
+
+// let min = temperatures[0];
+// let max = temperatures[0];
+
+// for (let i = 0; i < temperatures.length; i++) {
+//   const currentNumber = temperatures[i];
+//   if (currentNumber < min) {
+//     min = currentNumber;
+//   }
+//   if (currentNumber > max) {
+//     max = currentNumber;
+//   }
+// }
+
+// console.log(`Max Value: `, max);
+// console.log(`Min Value: `, min);
+
+// const amplitude = max - min;
+// console.log(amplitude);
+
 const temperatures = [3, -2, -6, -1, "err", 9, 13, 17, 15, 14, 9, 5];
 
-let min = temperatures[0];
-let max = temperatures[0];
+const calculateTemperatureAmplitude = temps => {
+  let min = Number.POSITIVE_INFINITY;
+  let max = Number.NEGATIVE_INFINITY;
 
-for (let i = 0; i < temperatures.length; i++) {
-  const currentNumber = temperatures[i];
-  if (currentNumber < min) {
-    min = currentNumber;
+  for (let i = 0; i < temps.length; i++) {
+    if (temps[i] < min) {
+      min = temps[i];
+    }
+    if (temps[i] > max) {
+      max = temps[i];
+    }
   }
-  if (currentNumber > max) {
-    max = currentNumber;
-  }
-}
+  const amplitude = max - min;
+  return {
+    min: min,
+    max: max,
+    amplitude: amplitude
+  };
+};
 
-console.log(`Max Value: `, max);
-console.log(`Min Value: `, min);
-
-const amplitude = max - min;
-console.log(amplitude);
+const result = calculateTemperatureAmplitude(temperatures);
+console.log(`Min Value: ${result.min}`);
+console.log(`Max Value: ${result.max}`);
+console.log(`Amplitude Value: ${result.amplitude}`);
