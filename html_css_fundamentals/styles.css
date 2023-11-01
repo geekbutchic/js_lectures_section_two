@@ -1,9 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: peachpuff;
   font-family: cursive;
+  padding: 50px;
 }
 
 .first {
   font-size: 40px;
   font-weight: bold;
 }
+
+.box {
+  width: 200px; /* Set your desired width */
+  height: 200px; /* Set your desired height */
+  padding: 20px;
+  margin: 0 auto; /* Auto margins horizontally center the box */
+  border: 2px solid grey;
+  background-image: url("https://iheartcraftythings.com/wp-content/uploads/2022/02/6-13.jpg");
+  background-size: cover; /* Adjust the background image size as needed */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat;
+}  
