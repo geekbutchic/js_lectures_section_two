@@ -15,17 +15,32 @@
 // document.querySelector(".guess").value = 23;
 
 // Select element itself
-console.log(document.querySelector(".check"));
- 
+// console.log(document.querySelector(".check"));
+
+// generates a random number between 1 and 20
+const secretGuess = Math.trunc(Math.random() * 20) + 1;
+document.querySelector(".number").textContent = secretGuess;
+
+let score = 20;
+
 document.querySelector(".check").addEventListener("click", () => {
   // converts to a number
   const guess = Number(document.querySelector(".guess").value);
+  console.log(guess, typeof guess);
+
   if (!guess) {
-    // If not a guess or not a number
     document.querySelector(".message").textContent =
       "Not a Number 🙄 Try Again!!!";
-  } else {
-    console.log(guess);
+  } else if (guess === secretGuess) {
+    document.querySelector(".message").textContent = `🎉 Correct Number!`;
+  } else if (guess > secretGuess) {
+    document.querySelector(".message").textContent = `Guess is Too high 🔺`;
+    score--;
+    document.querySelector(".score").textContent = score;
+  } else if (guess < secretGuess) {
+    document.querySelector(".message").textContent = `Guess is Too Low 🔻`;
+    score--;
+    document.querySelector(".score").textContent = score;
   }
 });
 
