@@ -23,6 +23,7 @@ document.querySelector(".number").textContent = secretGuess;
 
 let score = 20;
 
+// Event listener function
 document.querySelector(".check").addEventListener("click", () => {
   // converts to a number
   const guess = Number(document.querySelector(".guess").value);
