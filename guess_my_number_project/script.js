@@ -33,7 +33,10 @@ document.querySelector(".check").addEventListener("click", () => {
     document.querySelector(".message").textContent =
       "Not a Number 🙄 Try Again!!!";
   } else if (guess === secretGuess) {
+    //CSS SELECTOR DOM MANIPULATION - WHEN PLAYER WINS
     document.querySelector(".message").textContent = `🎉 Correct Number!`;
+    document.querySelector("body").style.backgroundColor = "#60b347";
+    document.querySelector(".number").style.width = "30rem";
   } else if (guess > secretGuess) {
     if (score > 1) {
       document.querySelector(".message").textContent = `Guess is Too high 🔺`;
