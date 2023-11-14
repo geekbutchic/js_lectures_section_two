@@ -87,22 +87,12 @@ document.querySelector(".again").addEventListener("click", () => {
   document.querySelector(".score").textContent = score;
 });
 
-/*
-1. document.querySelector(".check"): This line of code uses document.querySelector to select the first element in the document with the class "check". In this case, it selects the <button> element with the class "check". This button is typically used to check the user's guess.
-
-2. .addEventListener("click", () => { ... }): After selecting the button element, the code adds an event listener for the "click" event. This means that when the button is clicked, the provided arrow function will be executed.
-
-3. console.log(document.querySelector(".guess").value);: Inside the arrow function, the code logs the value of the element with the class "guess" to the console. This element is typically an <input> field where the user enters their guess. 
-
-So, when the user clicks the button with the class "check", the JavaScript code logs the value entered in the "guess" input field to the console. This is a common pattern for capturing user input and performing actions based on that input in a web application.
-*/
-
-// REFACTORED VERSION
-// let secretGuess, score;
+// let secretGuess, score, highScore;
 
 // function initializeGame() {
 //   secretGuess = Math.trunc(Math.random() * 20) + 1;
 //   score = 20;
+//   highScore = 0;
 //   document.querySelector(".message").textContent = "Start guessing...";
 //   document.querySelector("body").style.backgroundColor = "#222";
 //   document.querySelector(".number").style.width = "15rem";
@@ -111,8 +101,9 @@ So, when the user clicks the button with the class "check", the JavaScript code 
 //   document.querySelector(".score").textContent = score;
 // }
 
-// function checkGuess() {
+// function handleGuess() {
 //   const guess = Number(document.querySelector(".guess").value);
+//   console.log(guess, typeof guess);
 
 //   if (!guess) {
 //     document.querySelector(".message").textContent =
@@ -122,11 +113,22 @@ So, when the user clicks the button with the class "check", the JavaScript code 
 //     document.querySelector(".number").textContent = secretGuess;
 //     document.querySelector("body").style.backgroundColor = "#60b347";
 //     document.querySelector(".number").style.width = "30rem";
-//   } else {
-//     const message =
-//       guess > secretGuess ? "Guess is Too high 🔺" : "Guess is Too low 🔻";
+//     if (score > highScore) {
+//       highScore = score;
+//       document.querySelector(".highscore").textContent = highScore;
+//     }
+//   } else if (guess > secretGuess) {
+//     document.querySelector(".message").textContent = `Guess is Too high 🔺`;
 //     if (score > 1) {
-//       document.querySelector(".message").textContent = message;
+//       score--;
+//       document.querySelector(".score").textContent = score;
+//     } else {
+//       document.querySelector(".message").textContent = `You lost the game 😭`;
+//       document.querySelector(".score").textContent = 0;
+//     }
+//   } else if (guess < secretGuess) {
+//     document.querySelector(".message").textContent = `Guess is Too low 🔺`;
+//     if (score > 1) {
 //       score--;
 //       document.querySelector(".score").textContent = score;
 //     } else {
@@ -136,7 +138,7 @@ So, when the user clicks the button with the class "check", the JavaScript code 
 //   }
 // }
 
-// document.querySelector(".check").addEventListener("click", checkGuess);
+// document.querySelector(".check").addEventListener("click", handleGuess);
 // document.querySelector(".again").addEventListener("click", initializeGame);
 
-// initializeGame();
+// initializeGame(); // Call this to initialize the game when the page loads
