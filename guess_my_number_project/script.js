@@ -21,6 +21,7 @@
 let secretGuess = Math.trunc(Math.random() * 20) + 1;
 
 let score = 20;
+let highScore = 0;
 
 // Event listener function
 document.querySelector(".check").addEventListener("click", () => {
@@ -37,6 +38,10 @@ document.querySelector(".check").addEventListener("click", () => {
     document.querySelector(".number").textContent = secretGuess;
     document.querySelector("body").style.backgroundColor = "#60b347";
     document.querySelector(".number").style.width = "30rem";
+    if (score > highScore) {
+      highScore = score;
+      document.querySelector(".highscore").textContent = highScore;
+    }
   } else if (guess > secretGuess) {
     if (score > 1) {
       document.querySelector(".message").textContent = `Guess is Too high 🔺`;
