@@ -142,3 +142,5 @@ document.querySelector(".again").addEventListener("click", () => {
 // document.querySelector(".again").addEventListener("click", initializeGame);
 
 // initializeGame(); // Call this to initialize the game when the page loads
+
+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
